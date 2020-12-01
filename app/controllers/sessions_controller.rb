@@ -19,13 +19,14 @@ def create
     end
   end
 def is_logged_in?
-    if logged_in? #&& current_user
+    if logged_in? && current_user
       render json: {
         logged_in: true,
-        # user: current_user
+        user: current_user
       }
     else
       render json: {
+        session: session,
         logged_in: false,
         message: 'no such user'
       }
