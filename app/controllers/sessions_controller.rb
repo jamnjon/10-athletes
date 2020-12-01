@@ -9,7 +9,8 @@ def create
       login!
       render json: {
         logged_in: true,
-        user: @user
+        user: @user,
+        session: session[:user_id]
       }
     else
       render json: {
