@@ -26,7 +26,7 @@ def is_logged_in?
       }
     else
       render json: {
-        session: session,
+        session: session[:user_id],
         logged_in: false,
         message: 'no such user'
       }
