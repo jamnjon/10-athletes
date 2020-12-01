@@ -10,7 +10,7 @@ def create
       render json: {
         logged_in: true,
         user: @user,
-        session: session[:user_id]
+        session: session
       }
     else
       render json: {
