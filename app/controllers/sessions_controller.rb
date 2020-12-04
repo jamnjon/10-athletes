@@ -10,7 +10,9 @@ def create
       render json: {
         logged_in: true,
         user: @user,
-        session: session
+        session: session,
+        production: Rails.env.production?
+
       }
     else
       render json: {
